@@ -16,10 +16,10 @@ const valueSize = {
 export function Stat({ label, value, size = 'md', className }: StatProps) {
   return (
     <div className={className}>
-      <p className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-gray-500">
+      <p className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-ink-subtle">
         {label}
       </p>
-      <p className={cn('mt-2 font-semibold text-white', valueSize[size])}>{value}</p>
+      <p className={cn('mt-2 font-semibold text-ink', valueSize[size])}>{value}</p>
     </div>
   )
 }

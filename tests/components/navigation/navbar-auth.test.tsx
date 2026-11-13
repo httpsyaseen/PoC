@@ -2,6 +2,7 @@ import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Navbar } from '@/components/navigation/navbar'
 import { AuthProvider } from '@/providers/auth-provider'
+import { ThemeProvider } from '@/providers/theme-provider'
 import { ToastProvider } from '@/providers/toast-provider'
 import { WalletProvider } from '@/providers/wallet-provider'
 
@@ -22,13 +23,15 @@ function setEthereum(ethereum?: EthereumMock) {
 
 function renderNavbar() {
   return render(
-    <ToastProvider>
-      <AuthProvider>
-        <WalletProvider>
-          <Navbar />
-        </WalletProvider>
-      </AuthProvider>
-    </ToastProvider>,
+    <ThemeProvider>
+      <ToastProvider>
+        <AuthProvider>
+          <WalletProvider>
+            <Navbar />
+          </WalletProvider>
+        </AuthProvider>
+      </ToastProvider>
+    </ThemeProvider>,
   )
 }
 

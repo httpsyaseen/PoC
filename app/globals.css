@@ -51,6 +51,27 @@ body {
 
 @layer base {
   :root {
+    --surface-base: 247 248 251;
+    --surface-elevated: 237 241 247;
+    --ink: 11 17 32;
+    --ink-soft: 51 65 85;
+    --ink-muted: 71 85 105;
+    --ink-subtle: 100 116 139;
+    color-scheme: light;
+  }
+  .dark {
+    --surface-base: 11 17 32;
+    --surface-elevated: 14 23 42;
+    --ink: 255 255 255;
+    --ink-soft: 209 213 219;
+    --ink-muted: 156 163 175;
+    --ink-subtle: 107 114 128;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;

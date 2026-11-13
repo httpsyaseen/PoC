@@ -29,9 +29,9 @@ export function NavigationLinks({
             href={item.href}
             aria-current={isActive ? 'page' : undefined}
             className={cn(
-              'group relative inline-flex items-center gap-1.5 text-[14px] font-medium text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/40',
+              'group relative inline-flex items-center gap-1.5 text-[14px] font-medium text-ink-soft transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ink/40',
               variant === 'mobile' && 'block rounded-md px-2 py-2',
-              isActive && 'text-white',
+              isActive && 'text-ink',
             )}
             onClick={onNavigate}
           >

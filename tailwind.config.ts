@@ -63,8 +63,14 @@ export default {
         },
         // Surface tones (page backgrounds)
         surface: {
-          base: '#0B1120',
-          elevated: '#0E172A',
+          base: 'rgb(var(--surface-base) / <alpha-value>)',
+          elevated: 'rgb(var(--surface-elevated) / <alpha-value>)',
+        },
+        ink: {
+          DEFAULT: 'rgb(var(--ink) / <alpha-value>)',
+          soft: 'rgb(var(--ink-soft) / <alpha-value>)',
+          muted: 'rgb(var(--ink-muted) / <alpha-value>)',
+          subtle: 'rgb(var(--ink-subtle) / <alpha-value>)',
         },
       },
       fontFamily: {

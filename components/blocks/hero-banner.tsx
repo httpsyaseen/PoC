@@ -32,14 +32,14 @@ const heroFeatures: HeroFeature[] = [
 
 function FeatureCard({ feature }: { feature: HeroFeature }) {
   return (
-    <div className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-black/45 p-5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:bg-black/60">
+    <div className="group relative h-full overflow-hidden rounded-2xl border border-ink/10 bg-white/70 p-5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:bg-white/85 dark:bg-black/45 dark:hover:bg-black/60">
       <div className="flex items-start gap-3">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-ink/10 bg-ink/5">
           <feature.icon className="h-[18px] w-[18px] text-brand" />
         </div>
         <div className="min-w-0">
-          <h3 className="text-[15px] font-semibold text-white">{feature.title}</h3>
-          <p className="mt-1 text-[13px] leading-relaxed text-gray-400">{feature.description}</p>
+          <h3 className="text-[15px] font-semibold text-ink">{feature.title}</h3>
+          <p className="mt-1 text-[13px] leading-relaxed text-ink-muted">{feature.description}</p>
         </div>
       </div>
       <div
@@ -62,26 +62,26 @@ export function HeroBanner() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-base/30 via-surface-base/45 to-surface-base" />
-        <div className="absolute inset-0 bg-gradient-to-r from-surface-base/60 via-surface-base/15 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,transparent_35%,theme(colors.surface.base)_92%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-base/60 via-surface-base/70 dark:from-surface-base/30 dark:via-surface-base/45 to-surface-base" />
+        <div className="absolute inset-0 bg-gradient-to-r from-surface-base/80 via-surface-base/30 dark:from-surface-base/60 dark:via-surface-base/15 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,transparent_35%,rgb(var(--surface-base))_92%)]" />
       </div>
 
       <div className="mx-auto flex min-h-[78vh] w-full max-w-[92rem] flex-col px-6 pb-10 sm:px-10 lg:px-14 xl:px-20">
         <div className="mt-auto pt-[100px]">
-          <h1 className="max-w-5xl text-[2.5rem] leading-[1.02] font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[5.25rem]">
-            <span className="block text-white/85">Own a slice of</span>
+          <h1 className="max-w-5xl text-[2.5rem] leading-[1.02] font-semibold tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[5.25rem]">
+            <span className="block text-ink/85">Own a slice of</span>
             <span className="block">
               <span className="font-display italic font-medium text-brand">premium</span>{' '}
-              <span className="text-white/85">real estate,</span>
+              <span className="text-ink/85">real estate,</span>
             </span>
             <span className="block">tokenized and fractional.</span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-base leading-relaxed text-gray-300/90 sm:text-lg">
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
             BlockEstate revolutionizes property investment through fractional ownership. Buy a
             verified share of premium real estate with crypto, starting from just{' '}
-            <span className="font-semibold text-white">$100</span>.
+            <span className="font-semibold text-ink">$100</span>.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -99,7 +99,7 @@ export function HeroBanner() {
               asChild
               size="lg"
               variant="outline"
-              className="h-11 rounded-full border-white/15 bg-white/5 px-6 text-sm font-semibold text-white backdrop-blur-md hover:bg-white/10 hover:text-white"
+              className="h-11 rounded-full border-ink/15 bg-ink/5 px-6 text-sm font-semibold text-ink backdrop-blur-md hover:bg-ink/10 hover:text-ink"
             >
               <Link href="/properties">Browse Properties</Link>
             </Button>

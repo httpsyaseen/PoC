@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { AuthProvider } from '@/providers/auth-provider'
+import { themeInitScript } from '@/lib/theme/config'
+import { ThemeProvider } from '@/providers/theme-provider'
 import { ToastProvider } from '@/providers/toast-provider'
 import { WalletProvider } from '@/providers/wallet-provider'
 import { Footer } from '@/components/blocks/footer'
@@ -33,19 +35,24 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-surface-base min-h-screen pt-[68px]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-surface-base text-ink min-h-screen transition-colors duration-300 pt-[68px]`}
       >
-        <ToastProvider>
-          <AuthProvider>
-            <WalletProvider>
-              <Navbar />
-              {children}
-              <Footer />
-            </WalletProvider>
-          </AuthProvider>
-        </ToastProvider>
+        <ThemeProvider>
+          <ToastProvider>
+            <AuthProvider>
+              <WalletProvider>
+                <Navbar />
+                {children}
+                <Footer />
+              </WalletProvider>
+            </AuthProvider>
+          </ToastProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
